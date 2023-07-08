@@ -4,9 +4,9 @@ import { Server } from 'socket.io';
 import __dirname from './utils.js';
 import routerViews from './router/views.router.js'
 
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 const app = express();
-const httpServer = app.listen(port, () => console.log('Listening...'));
+const httpServer = app.listen(PORT, () => console.log('Listening...'));
 // Configurar socket
 const io = new Server(httpServer);
 
